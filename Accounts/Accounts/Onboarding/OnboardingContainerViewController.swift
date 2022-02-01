@@ -19,9 +19,10 @@ class OnboardingContainerViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         
-        let page1 = ViewController1()
-        let page2 = ViewController2()
-        let page3 = ViewController3()
+        let page1 = OnboardingViewController(imageName: "laptopMan", labelText: "Welcome to the Accounts app!")
+        let page2 = OnboardingViewController(imageName: "paperHands", labelText: "We're here for all your banking needs.")
+        let page3 = OnboardingViewController(imageName: "coinWoman", labelText: "Spend less time worrying and more time saving.")
+        // all images courtesy of: "https://www.freepik.com/vectors/money">Money vector created by stories - www.freepik.com
         
         pages.append(page1)
         pages.append(page2)
@@ -39,7 +40,7 @@ class OnboardingContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPurple
+        view.backgroundColor = UIColor(red: 27/255, green: 48/255, blue: 53/255, alpha: 1.0)
         
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
@@ -89,27 +90,5 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return pages.firstIndex(of: self.currentVC) ?? 0
-    }
-}
-
-// MARK: - ViewControllers
-class ViewController1: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-    }
-}
-
-class ViewController2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-    }
-}
-
-class ViewController3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
     }
 }
