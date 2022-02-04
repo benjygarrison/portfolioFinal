@@ -7,6 +7,11 @@
 
 import UIKit
 
+//Note:  the "Delegate in this title actually refers to the Protocol, not the Delegate" ->
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogIn()
+}
+
 class LoginViewController: UIViewController {
     
     //MARK: Properties
@@ -14,6 +19,8 @@ class LoginViewController: UIViewController {
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     var userName: String? {
         return loginView.userNameTextField.text
@@ -100,6 +107,7 @@ extension LoginViewController {
         
         if userName == "Benji" || password == "abc123" {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogIn()
         } else {
             configureView(withMessage: "Invalid username or password.")
             return

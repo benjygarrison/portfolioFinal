@@ -11,6 +11,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let loginViewController = LoginViewController()
+    let onboardingContainerViewController = OnboardingContainerViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
@@ -18,7 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         //window?.rootViewController = LoginViewController()
-        window?.rootViewController = OnboardingContainerViewController()
+        
+        loginViewController.delegate = self
+        onboardingContainerViewController.delegate = self
+        
+        window?.rootViewController = onboardingContainerViewController
+        
         //window?.rootViewController = OnboardingViewController(imageName: "laptopMan", labelText: "Welcome to the Accounts app!")
         
         return true
@@ -28,3 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: LoginViewControllerDelegate {
+    func didLogIn() {
+        print("didLogIn")
+    }
+}
+
+extension AppDelegate: OnboardingContainerViewControllerDelegate {
+    func didFinishOnboarding() {
+        print("didOnboard")
+    }
+    
+    
+}
