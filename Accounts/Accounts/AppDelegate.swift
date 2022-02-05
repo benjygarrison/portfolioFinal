@@ -7,6 +7,8 @@
 
 import UIKit
 
+let applicationColor = UIColor(red: 27/255, green: 48/255, blue: 53/255, alpha: 0.75)
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,21 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let onboardingContainerViewController = OnboardingContainerViewController()
     //let onboardingViewController = OnboardingContainerViewController()
     let dummyViewController = DummyViewController()
+    let mainViewController = MainViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        //window?.rootViewController = LoginViewController()
         
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         dummyViewController.logoutDelegate = self
         
-        window?.rootViewController = loginViewController
+        window?.rootViewController = mainViewController
         
         //window?.rootViewController = OnboardingViewController(imageName: "laptopMan", labelText: "Welcome to the Accounts app!")
+        
+        mainViewController.selectedIndex = 1
         
         return true
         
