@@ -21,6 +21,7 @@
 		BA447D3827A700000023591E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA447D3727A700000023591E /* LoginView.swift */; };
 		BA447D3B27A88C0B0023591E /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA447D3A27A88C0B0023591E /* OnboardingContainerViewController.swift */; };
 		BA447D3D27A89AE20023591E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA447D3C27A89AE20023591E /* OnboardingViewController.swift */; };
+		BAEC45B327B0D26A003B5121 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45B227B0D26A003B5121 /* AccountSummaryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BA447D3727A700000023591E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BA447D3A27A88C0B0023591E /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		BA447D3C27A89AE20023591E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BAEC45B227B0D26A003B5121 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				BA3C476127B08C2200B541CD /* AccountSummaryViewController.swift */,
-				BA3C476327B093CD00B541CD /* AccountSummaryHeaderView.swift */,
-				BA3C476527B0942900B541CD /* AccountSummaryHeaderView.xib */,
+				BAEC45AF27B0D223003B5121 /* Cell */,
+				BAEC45AE27B0D209003B5121 /* Header */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -129,6 +131,23 @@
 				BA447D3C27A89AE20023591E /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BAEC45AE27B0D209003B5121 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				BA3C476327B093CD00B541CD /* AccountSummaryHeaderView.swift */,
+				BA3C476527B0942900B541CD /* AccountSummaryHeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		BAEC45AF27B0D223003B5121 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BAEC45B227B0D26A003B5121 /* AccountSummaryCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +223,7 @@
 			files = (
 				BA447D3827A700000023591E /* LoginView.swift in Sources */,
 				BA3C475B27AEFA5400B541CD /* LocalState.swift in Sources */,
+				BAEC45B327B0D26A003B5121 /* AccountSummaryCell.swift in Sources */,
 				BA447D2627A6F7750023591E /* LoginViewController.swift in Sources */,
 				BA3C476427B093CD00B541CD /* AccountSummaryHeaderView.swift in Sources */,
 				BA3C475D27AF13F300B541CD /* ViewControllers+Utilities.swift in Sources */,
