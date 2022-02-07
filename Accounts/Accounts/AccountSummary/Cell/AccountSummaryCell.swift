@@ -18,7 +18,7 @@ class AccountSummaryCell: UITableViewCell {
     let arrow = UIImageView()
     
     static let reuseIdentifier = "AccountSummaryCell"
-    static let rowHeight: CGFloat = 100
+    static let rowHeight: CGFloat = 110
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,6 +34,7 @@ class AccountSummaryCell: UITableViewCell {
     
 }
 
+//MARK: Layout/Setup
 extension AccountSummaryCell {
     
     private func layout() {
@@ -80,9 +81,10 @@ extension AccountSummaryCell {
         balanceLabel.textAlignment = .right
         balanceLabel.text = "Balance"
         
+        
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
-        balanceAmountLabel.text = "$999.99"
+        balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "999", cents: "99")
         
         arrow.translatesAutoresizingMaskIntoConstraints = false
         let arrowImage = UIImage(systemName: "chevron.right")!.withTintColor(applicationColor, renderingMode: .alwaysOriginal)
@@ -99,4 +101,26 @@ extension AccountSummaryCell {
         
         contentView.addSubview(arrow)
     }
+
+}
+
+//MARK: Font Styling
+extension AccountSummaryCell {
+    
+    private func makeFormattedBalance(dollars: String, cents: String) -> NSMutableAttributedString {
+        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
+        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
+        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
+        
+        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
+        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
+        let centString = NSAttributedString(string: cents, attributes: centAttributes)
+        
+        rootString.append(dollarString)
+        rootString.append(centString)
+        
+        return rootString
+    }
+    
+    
 }
