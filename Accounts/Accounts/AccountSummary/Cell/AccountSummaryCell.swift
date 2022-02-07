@@ -85,7 +85,7 @@ extension AccountSummaryCell {
         accountTypeLabel.text = "Account Type"
         
         underlineView.translatesAutoresizingMaskIntoConstraints = false
-        underlineView.backgroundColor = applicationColor
+        //underlineView.backgroundColor = applicationColor
         
         accountNameLabel.translatesAutoresizingMaskIntoConstraints = false
         accountNameLabel.font = UIFont.preferredFont(forTextStyle: .body)
@@ -106,7 +106,7 @@ extension AccountSummaryCell {
         balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "xxx,xxx", cents: "xx")
         
         arrow.translatesAutoresizingMaskIntoConstraints = false
-        let arrowImage = UIImage(systemName: "chevron.right")!.withTintColor(applicationColor, renderingMode: .alwaysOriginal)
+        let arrowImage = UIImage(systemName: "chevron.right")!.withTintColor(.darkGray, renderingMode: .alwaysOriginal)
         arrow.image = arrowImage
         
         contentView.addSubview(accountTypeLabel)
@@ -153,11 +153,11 @@ extension AccountSummaryCell {
         
         switch avm.accountType {
         case .Banking:
-            underlineView.backgroundColor = .systemOrange
+            underlineView.backgroundColor = .systemGreen
         case .Credit:
             underlineView.backgroundColor = .systemMint
         case .Investment:
-            underlineView.backgroundColor = .systemPink
+            underlineView.backgroundColor = UIColor(red: 27/255, green: 48/255, blue: 53/255, alpha: 0.75)
         }
     }
 }

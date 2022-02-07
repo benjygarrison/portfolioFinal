@@ -8,14 +8,14 @@
 import UIKit
 
 extension UIViewController {
-    func setupStatusBar() {
-//        let statusBarSize = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-//        let frame: CGFloat = 0
+//    func setupStatusBar() {
+//        let statusBarSize = UIApplication.shared.statusBarFrame.size
+//        let frame = CGRect(origin: .zero, size: statusBarSize)
 //        let statusBarView = UIView(frame: frame)
 //
 //        statusBarView.backgroundColor = applicationColor
 //        view.addSubview(statusBarView)
-    }
+//    }
     
     func setupTabBarImage(imageName: String, title: String) {
         let config = UIImage.SymbolConfiguration(scale: .large)
