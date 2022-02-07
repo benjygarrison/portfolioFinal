@@ -20,6 +20,20 @@ class AccountSummaryCell: UITableViewCell {
     static let reuseIdentifier = "AccountSummaryCell"
     static let rowHeight: CGFloat = 110
     
+    enum AccountType: String {
+        case Banking
+        case Credit
+        case Investment
+    }
+    
+    struct AccountViewModel {
+        let accountType: AccountType
+        let accountName: String
+    }
+    
+    let accountViewModel:AccountViewModel? = nil
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -121,6 +135,20 @@ extension AccountSummaryCell {
         
         return rootString
     }
-    
-    
+}
+
+//MARK: View Model Configuration
+extension AccountSummaryCell {
+    func configure(with avm: AccountViewModel) {
+        accountTypeLabel.text = avm.accountType.rawValue
+        accountNameLabel.text = avm.accountName
+        switch avm.accountType {
+        case .Banking:
+            underlineView.backgroundColor = .systemOrange
+        case .Credit:
+            underlineView.backgroundColor = .systemMint
+        case .Investment:
+            underlineView.backgroundColor = .systemPink
+        }
+    }
 }

@@ -9,11 +9,7 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     
-    let games = [
-        "Pacman",
-        "Space Invaders",
-        "Space Patrol",
-    ]
+    var accounts: [AccountSummaryCell.AccountViewModel] = []
     
     var tableView = UITableView()
     
@@ -27,6 +23,7 @@ extension AccountSummaryViewController {
     private func setup() {
         setupTableView()
         setupTableHeaderView()
+        fetchData()
     }
     
     private func setupTableView() {
@@ -46,7 +43,6 @@ extension AccountSummaryViewController {
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        //view = tableView
     }
     
     private func setupTableHeaderView() {
@@ -62,17 +58,32 @@ extension AccountSummaryViewController {
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard !accounts.isEmpty else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseIdentifier, for: indexPath) as! AccountSummaryCell
+        let account = accounts[indexPath.row]
+        cell.configure(with: account)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return accounts.count
     }
 }
 
 extension AccountSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension AccountSummaryViewController {
+    private func fetchData() {
+        let savings = AccountSummaryCell.AccountViewModel(accountType: .Banking, accountName: "Savings")
+        let Credit = AccountSummaryCell.AccountViewModel(accountType: .Credit, accountName: "Visa")
+        let investment = AccountSummaryCell.AccountViewModel(accountType: .Investment, accountName: "Trading Account")
+        
+        accounts.append(savings)
+        accounts.append(Credit)
+        accounts.append(investment)
     }
 }
