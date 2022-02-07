@@ -29,6 +29,11 @@ class AccountSummaryCell: UITableViewCell {
     struct AccountViewModel {
         let accountType: AccountType
         let accountName: String
+        let balance: Decimal
+        
+        var balanceAsAttributedString: NSAttributedString {
+            return CurrencyFormatter().makeAttributedCurrency(balance)
+        }
     }
     
     let accountViewModel:AccountViewModel? = nil
@@ -37,8 +42,8 @@ class AccountSummaryCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-    setup()
-    layout()
+        setup()
+        layout()
         
     }
     
@@ -98,12 +103,12 @@ extension AccountSummaryCell {
         
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
-        balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "999", cents: "99")
+        balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "xxx,xxx", cents: "xx")
         
         arrow.translatesAutoresizingMaskIntoConstraints = false
         let arrowImage = UIImage(systemName: "chevron.right")!.withTintColor(applicationColor, renderingMode: .alwaysOriginal)
         arrow.image = arrowImage
-    
+        
         contentView.addSubview(accountTypeLabel)
         contentView.addSubview(underlineView)
         contentView.addSubview(accountNameLabel)
@@ -115,7 +120,7 @@ extension AccountSummaryCell {
         
         contentView.addSubview(arrow)
     }
-
+    
 }
 
 //MARK: Font Styling
@@ -127,10 +132,12 @@ extension AccountSummaryCell {
         let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
         
         let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
+        //let decimalString = NSMutableAttributedString(string: ".", attributes: centAttributes)
         let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
         let centString = NSAttributedString(string: cents, attributes: centAttributes)
         
         rootString.append(dollarString)
+        //rootString.append(decimalString)
         rootString.append(centString)
         
         return rootString
@@ -142,6 +149,8 @@ extension AccountSummaryCell {
     func configure(with avm: AccountViewModel) {
         accountTypeLabel.text = avm.accountType.rawValue
         accountNameLabel.text = avm.accountName
+        balanceAmountLabel.attributedText = avm.balanceAsAttributedString
+        
         switch avm.accountType {
         case .Banking:
             underlineView.backgroundColor = .systemOrange
