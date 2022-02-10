@@ -1,8 +1,8 @@
 [
            {
              "id": "1",
-             "first_name": "Benji"
-             "last_name": "Garrison"
+             "firstName": "Benji"
+             "lastName": "Garrison"
              "type": "Banking",
              "name": "Basic Savings",
              "amount": 929466.23,
@@ -10,8 +10,8 @@
            },
            {
              "id": "2",
-             "first_name": "Hana"
-             "last_name": "Inoue"
+             "firstName": "Hana"
+             "lastName": "Inoue"
              "type": "Banking",
              "name": "No-Fee Checking",
              "amount": 17562.44,

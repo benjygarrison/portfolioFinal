@@ -138,18 +138,18 @@ extension AccountSummaryViewController {
 extension AccountSummaryViewController {
     private func fetchDataAndLoadView() {
         
-        fetchProfile(forUserId: "2") { result in
-            switch result {
-            case .success(let userProfile):
-                self.userProfile = userProfile
-                self.configureTableHeaderView(with: userProfile)
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        fetchProfile(forUserId: "1") { result in
+//            switch result {
+//            case .success(let userProfile):
+//                self.userProfile = userProfile
+//                self.configureTableHeaderView(with: userProfile)
+//                self.tableView.reloadData()
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
         
-        fetchUserAccountData()
+        //fetchUserAccountData()
 
         fetchAccounts(forUserId: "1") { result in
             switch result {
