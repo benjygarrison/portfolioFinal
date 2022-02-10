@@ -27,6 +27,8 @@
 		BAEC45C627B1BA00003B5121 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45C527B1BA00003B5121 /* CurrencyFormatterTests.swift */; };
 		BAEC45C827B2682A003B5121 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45C727B2682A003B5121 /* NSNotificationName.swift */; };
 		BAEC45CA27B26BB0003B5121 /* TextField+ShowPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45C927B26BB0003B5121 /* TextField+ShowPassword.swift */; };
+		BAEC45CC27B4B1A3003B5121 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45CB27B4B1A3003B5121 /* Date+Utilities.swift */; };
+		BAEC45CE27B4B318003B5121 /* AccountSummaryViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45CD27B4B318003B5121 /* AccountSummaryViewController+Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		BAEC45C527B1BA00003B5121 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		BAEC45C727B2682A003B5121 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		BAEC45C927B26BB0003B5121 /* TextField+ShowPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+ShowPassword.swift"; sourceTree = "<group>"; };
+		BAEC45CB27B4B1A3003B5121 /* Date+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
+		BAEC45CD27B4B318003B5121 /* AccountSummaryViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Network.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				BAEC45B427B1029D003B5121 /* Decimal+Utilities.swift */,
 				BAEC45C727B2682A003B5121 /* NSNotificationName.swift */,
 				BAEC45C927B26BB0003B5121 /* TextField+ShowPassword.swift */,
+				BAEC45CB27B4B1A3003B5121 /* Date+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3C476127B08C2200B541CD /* AccountSummaryViewController.swift */,
+				BAEC45CD27B4B318003B5121 /* AccountSummaryViewController+Network.swift */,
 				BAEC45AF27B0D223003B5121 /* Cell */,
 				BAEC45AE27B0D209003B5121 /* Header */,
 			);
@@ -294,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAEC45CE27B4B318003B5121 /* AccountSummaryViewController+Network.swift in Sources */,
 				BA447D3827A700000023591E /* LoginView.swift in Sources */,
 				BA3C475B27AEFA5400B541CD /* LocalState.swift in Sources */,
 				BAEC45B327B0D26A003B5121 /* AccountSummaryCell.swift in Sources */,
@@ -305,6 +312,7 @@
 				BAEC45B727B1031C003B5121 /* CurrencyConversion+Utilities.swift in Sources */,
 				BA3C475827AEF12B00B541CD /* DummyViewController.swift in Sources */,
 				BA3C475F27AF1B8700B541CD /* MainViewController.swift in Sources */,
+				BAEC45CC27B4B1A3003B5121 /* Date+Utilities.swift in Sources */,
 				BA3C476227B08C2200B541CD /* AccountSummaryViewController.swift in Sources */,
 				BA447D2227A6F7750023591E /* AppDelegate.swift in Sources */,
 				BAEC45B527B1029D003B5121 /* Decimal+Utilities.swift in Sources */,

@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum AccountType: String, Codable {
+    case Banking
+    case Credit
+    case Investment
+}
+
 class AccountSummaryCell: UITableViewCell {
     
     let accountTypeLabel = UILabel()
@@ -19,12 +25,6 @@ class AccountSummaryCell: UITableViewCell {
     
     static let reuseIdentifier = "AccountSummaryCell"
     static let rowHeight: CGFloat = 110
-    
-    enum AccountType: String {
-        case Banking
-        case Credit
-        case Investment
-    }
     
     struct AccountViewModel {
         let accountType: AccountType
