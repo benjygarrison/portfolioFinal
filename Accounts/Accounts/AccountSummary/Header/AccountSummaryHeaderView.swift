@@ -16,7 +16,7 @@ class AccountSummaryHeaderView: UIView {
     
     struct ViewModel {
         let userName: String
-        let userLastName: String
+        //let userLastName: String
     }
     
     override init(frame: CGRect) {
@@ -49,6 +49,6 @@ class AccountSummaryHeaderView: UIView {
     func configure(viewModel: ViewModel) {
         
         nameLabel.text = viewModel.userName
-        dateLabel.text = viewModel.userLastName
+        //dateLabel.text = viewModel.userLastName
     }
 }

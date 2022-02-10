@@ -15,7 +15,7 @@ class AccountSummaryViewController: UIViewController {
     
     //View Model
     var accountCellViewModel: [AccountSummaryCell.AccountViewModel] = []
-    var headerViewModel = AccountSummaryHeaderView.ViewModel(userName: "", userLastName: "")
+    var headerViewModel = AccountSummaryHeaderView.ViewModel(userName: "")
     
     var headerView = AccountSummaryHeaderView(frame: .zero)
     var tableView = UITableView()
@@ -134,7 +134,7 @@ extension AccountSummaryViewController {
     }
     
     private func configureTableHeaderView(with userProfile: UserProfile) {
-        let vm = AccountSummaryHeaderView.ViewModel(userName: userProfile.firstName, userLastName: userProfile.lastName)
+        let vm = AccountSummaryHeaderView.ViewModel(userName: userProfile.firstName)
         headerView.configure(viewModel: vm)
     }
     
