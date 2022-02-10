@@ -17,11 +17,6 @@ class AccountSummaryHeaderView: UIView {
     struct ViewModel {
         let userName: String
         let userLastName: String
-//        let date: Date
-//        
-//        var formattedDate: String {
-//            return date.monthDayYear
-//        }
     }
     
     override init(frame: CGRect) {

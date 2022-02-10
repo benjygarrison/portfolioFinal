@@ -48,8 +48,6 @@ extension AccountSummaryViewController {
 
 struct Account: Codable {
     let id: String
-    let firstName: String
-    let lastName: String
     let type: AccountType
     let name: String
     let amount: Decimal
@@ -58,7 +56,7 @@ struct Account: Codable {
 
 extension AccountSummaryViewController {
     func fetchAccounts(forUserId userId: String, completion: @escaping (Result<[Account],NetworkError>) -> Void) {
-        let url = URL(string: "https://raw.githubusercontent.com/benjygarrison/portfolioFinal/main/Accounts/Accounts/data.json")!
+        let url = URL(string: "https://raw.githubusercontent.com/benjygarrison/portfolioFinal/main/Accounts/Accounts/accountData.json")!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
