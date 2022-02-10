@@ -38,8 +38,9 @@ class LoginViewController: UIViewController {
     
     //Animation code
     var leadingEdgeOnScreen: CGFloat = 16
+    var subtitleLeadingEdgeOnScreen: CGFloat = 24
     var leadingEdgeOffScreen: CGFloat = -1000
-    //var subtitleLeadingEdgeOffScreen: CGFloat = 1000
+    var subtitleLeadingEdgeOffScreen: CGFloat = 1000
     
     var titleLeadingAnchor: NSLayoutConstraint?
     var subtitleLeadingAnchor: NSLayoutConstraint?
@@ -166,7 +167,7 @@ extension LoginViewController {
             return
         }
         
-        if userName == "Bj" || password == "abc" {
+        if userName == "Ben" || password == "abc" {
             signInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogIn()
         } else {
@@ -179,6 +180,7 @@ extension LoginViewController {
     private func configureView(withMessage message: String) {
         errorMessageLabel.isHidden = false
         errorMessageLabel.text = message
+        shakeButton()
     }
 }
 
@@ -196,7 +198,7 @@ extension LoginViewController {
         animatorOne.startAnimation()
   
         let animatorTwo = UIViewPropertyAnimator(duration: animationDuration, curve: .easeInOut) {
-            self.subtitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.subtitleLeadingAnchor?.constant = CGFloat(self.leadingEdgeOnScreen)
         self.view.layoutIfNeeded()
         }
         animatorTwo.startAnimation(afterDelay: 0.5)
@@ -214,5 +216,17 @@ extension LoginViewController {
         animatorFour.startAnimation(afterDelay: 1)
     
 }
+    
+    private func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        animation.isAdditive = true
+        
+        signInButton.layer.add(animation, forKey: "shake")
+    }
+    
     
 }
