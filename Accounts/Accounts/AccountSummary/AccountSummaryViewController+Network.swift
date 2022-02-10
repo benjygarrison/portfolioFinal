@@ -26,7 +26,7 @@ struct UserProfile: Codable {
 
 extension AccountSummaryViewController {
     func fetchProfile(forUserId userId: String, completion: @escaping (Result<UserProfile,NetworkError>) -> Void) {
-        let url = URL(string: "https://raw.githubusercontent.com/benjygarrison/portfolioFinal/main/Accounts/Accounts/data.json")!
+        let url = URL(string: "https://raw.githubusercontent.com/benjygarrison/portfolioFinal/main/Accounts/Accounts/userProfile.json")!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {

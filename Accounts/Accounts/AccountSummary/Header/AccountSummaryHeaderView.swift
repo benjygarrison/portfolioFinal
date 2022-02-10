@@ -16,11 +16,12 @@ class AccountSummaryHeaderView: UIView {
     
     struct ViewModel {
         let userName: String
-        let date: Date
-        
-        var formattedDate: String {
-            return date.monthDayYear
-        }
+        let userLastName: String
+//        let date: Date
+//        
+//        var formattedDate: String {
+//            return date.monthDayYear
+//        }
     }
     
     override init(frame: CGRect) {
@@ -52,7 +53,7 @@ class AccountSummaryHeaderView: UIView {
     
     func configure(viewModel: ViewModel) {
         
-        nameLabel.text = "Hello  \(viewModel.userName)!"
-        //dateLabel.text = viewModel.formattedDate
+        nameLabel.text = viewModel.userName
+        dateLabel.text = viewModel.userLastName
     }
 }

@@ -15,7 +15,7 @@ class AccountSummaryViewController: UIViewController {
     
     //View Model
     var accountCellViewModel: [AccountSummaryCell.AccountViewModel] = []
-    var headerViewModel = AccountSummaryHeaderView.ViewModel(userName: "", date: Date())
+    var headerViewModel = AccountSummaryHeaderView.ViewModel(userName: "", userLastName: "")
     
     var headerView = AccountSummaryHeaderView(frame: .zero)
     var tableView = UITableView()
@@ -138,16 +138,16 @@ extension AccountSummaryViewController {
 extension AccountSummaryViewController {
     private func fetchDataAndLoadView() {
         
-//        fetchProfile(forUserId: "1") { result in
-//            switch result {
-//            case .success(let userProfile):
-//                self.userProfile = userProfile
-//                self.configureTableHeaderView(with: userProfile)
-//                self.tableView.reloadData()
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+        fetchProfile(forUserId: "1") { result in
+            switch result {
+            case .success(let userProfile):
+                self.userProfile = userProfile
+                self.configureTableHeaderView(with: userProfile)
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
         //fetchUserAccountData()
 
@@ -164,7 +164,7 @@ extension AccountSummaryViewController {
     }
     
     private func configureTableHeaderView(with userProfile: UserProfile) {
-        let vm = AccountSummaryHeaderView.ViewModel(userName: userProfile.firstName, date: Date())
+        let vm = AccountSummaryHeaderView.ViewModel(userName: userProfile.firstName, userLastName: userProfile.lastName)
         headerView.configure(viewModel: vm)
     }
     
