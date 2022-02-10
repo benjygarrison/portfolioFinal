@@ -26,7 +26,7 @@ struct UserProfile: Codable {
 
 extension AccountSummaryViewController {
     func fetchProfile(forUserId userId: String, completion: @escaping (Result<UserProfile,NetworkError>) -> Void) {
-        let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)")!
+        let url = URL(string: "https://raw.githubusercontent.com/benjygarrison/portfolioFinal/main/Accounts/Accounts/data.json")!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
@@ -56,7 +56,7 @@ struct Account: Codable {
 
 extension AccountSummaryViewController {
     func fetchAccounts(forUserId userId: String, completion: @escaping (Result<[Account],NetworkError>) -> Void) {
-        let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)/accounts")!
+        let url = URL(string: "https://raw.githubusercontent.com/benjygarrison/portfolioFinal/main/Accounts/Accounts/data.json")!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {

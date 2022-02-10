@@ -1,6 +1,8 @@
 [
            {
              "id": "1",
+             "first_name": "Benji"
+             "last_name": "Garrison"
              "type": "Banking",
              "name": "Basic Savings",
              "amount": 929466.23,
@@ -8,8 +10,10 @@
            },
            {
              "id": "2",
+             "first_name": "Hana"
+             "last_name": "Inoue"
              "type": "Banking",
-             "name": "No-Fee All-In Chequing",
+             "name": "No-Fee Checking",
              "amount": 17562.44,
              "createdDateTime" : "2011-06-21T15:29:32Z"
            },

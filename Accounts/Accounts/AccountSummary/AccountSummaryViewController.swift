@@ -138,7 +138,7 @@ extension AccountSummaryViewController {
 extension AccountSummaryViewController {
     private func fetchDataAndLoadView() {
         
-        fetchProfile(forUserId: "1") { result in
+        fetchProfile(forUserId: "2") { result in
             switch result {
             case .success(let userProfile):
                 self.userProfile = userProfile
