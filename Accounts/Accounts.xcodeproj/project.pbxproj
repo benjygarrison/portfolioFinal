@@ -29,6 +29,7 @@
 		BAEC45CA27B26BB0003B5121 /* TextField+ShowPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45C927B26BB0003B5121 /* TextField+ShowPassword.swift */; };
 		BAEC45CC27B4B1A3003B5121 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45CB27B4B1A3003B5121 /* Date+Utilities.swift */; };
 		BAEC45CE27B4B318003B5121 /* AccountSummaryViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC45CD27B4B318003B5121 /* AccountSummaryViewController+Network.swift */; };
+		BAEC45D427B4D3A0003B5121 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = BAEC45D327B4D3A0003B5121 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		BAEC45C927B26BB0003B5121 /* TextField+ShowPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+ShowPassword.swift"; sourceTree = "<group>"; };
 		BAEC45CB27B4B1A3003B5121 /* Date+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
 		BAEC45CD27B4B318003B5121 /* AccountSummaryViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Network.swift"; sourceTree = "<group>"; };
+		BAEC45D327B4D3A0003B5121 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				BA3C476027B08BF500B541CD /* AccountSummary */,
 				BA3C475927AEFA4400B541CD /* Utilities */,
 				BA447D3527A6FD750023591E /* Files */,
+				BAEC45D327B4D3A0003B5121 /* data.json */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				BA3C476627B0942900B541CD /* AccountSummaryHeaderView.xib in Resources */,
 				BA447D2E27A6F7780023591E /* LaunchScreen.storyboard in Resources */,
 				BA447D2B27A6F7780023591E /* Assets.xcassets in Resources */,
+				BAEC45D427B4D3A0003B5121 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

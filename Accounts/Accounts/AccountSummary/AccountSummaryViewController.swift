@@ -97,31 +97,31 @@ extension AccountSummaryViewController: UITableViewDelegate {
 
 extension AccountSummaryViewController {
     private func fetchUserAccountData() {
-//        let savings = AccountSummaryCell.AccountViewModel(accountType: .Banking,
-//                                                          accountName: "Basic Savings",
-//                                                          balance: 929466.23)
-//        let visa = AccountSummaryCell.AccountViewModel(accountType: .Credit,
-//                                                       accountName: "Visa Avion Card",
-//                                                       balance: 412.83)
-//        let chequing = AccountSummaryCell.AccountViewModel(accountType: .Banking,
-//                                                           accountName: "No-Fee All-In Chequing",
-//                                                           balance: 17562.44)
-//        let investment1 = AccountSummaryCell.AccountViewModel(accountType: .Investment,
-//                                                              accountName: "Tax-Free Saver",
-//                                                              balance: 2000.00)
-//        let masterCard = AccountSummaryCell.AccountViewModel(accountType: .Credit,
-//                                                             accountName: "Student Mastercard",
-//                                                             balance: 50.83)
-//        let investment2 = AccountSummaryCell.AccountViewModel(accountType: .Investment,
-//                                                              accountName: "Growth Fund",
-//                                                              balance: 15000.00)
-//
-//        accountCellViewModel.append(visa)
-//        accountCellViewModel.append(investment1)
-//        accountCellViewModel.append(chequing)
-//        accountCellViewModel.append(masterCard)
-//        accountCellViewModel.append(savings)
-//        accountCellViewModel.append(investment2)
+        let savings = AccountSummaryCell.AccountViewModel(accountType: .Banking,
+                                                          accountName: "Basic Savings",
+                                                          balance: 929466.23)
+        let visa = AccountSummaryCell.AccountViewModel(accountType: .Credit,
+                                                       accountName: "Visa Avion Card",
+                                                       balance: 412.83)
+        let chequing = AccountSummaryCell.AccountViewModel(accountType: .Banking,
+                                                           accountName: "No-Fee All-In Chequing",
+                                                           balance: 17562.44)
+        let investment1 = AccountSummaryCell.AccountViewModel(accountType: .Investment,
+                                                              accountName: "Tax-Free Saver",
+                                                              balance: 2000.00)
+        let masterCard = AccountSummaryCell.AccountViewModel(accountType: .Credit,
+                                                             accountName: "Student Mastercard",
+                                                             balance: 50.83)
+        let investment2 = AccountSummaryCell.AccountViewModel(accountType: .Investment,
+                                                              accountName: "Growth Fund",
+                                                              balance: 15000.00)
+
+        accountCellViewModel.append(visa)
+        accountCellViewModel.append(investment1)
+        accountCellViewModel.append(chequing)
+        accountCellViewModel.append(masterCard)
+        accountCellViewModel.append(savings)
+        accountCellViewModel.append(investment2)
     }
 }
 
@@ -148,6 +148,8 @@ extension AccountSummaryViewController {
                 print(error.localizedDescription)
             }
         }
+        
+        fetchUserAccountData()
 
         fetchAccounts(forUserId: "1") { result in
             switch result {

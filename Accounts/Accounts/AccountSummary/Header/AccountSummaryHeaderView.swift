@@ -51,7 +51,8 @@ class AccountSummaryHeaderView: UIView {
     }
     
     func configure(viewModel: ViewModel) {
-        nameLabel.text = "Hello  \(viewModel.userName)!"
+        
+        //nameLabel.text = "Hello  \(viewModel.userName)!"
         //dateLabel.text = viewModel.formattedDate
     }
 }

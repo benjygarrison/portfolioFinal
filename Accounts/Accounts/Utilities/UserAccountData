@@ -1,0 +1,16 @@
+[
+           {
+             "id": "1",
+             "type": "Banking",
+             "name": "Basic Savings",
+             "amount": 929466.23,
+             "createdDateTime" : "2010-06-21T15:29:32Z"
+           },
+           {
+             "id": "2",
+             "type": "Banking",
+             "name": "No-Fee All-In Chequing",
+             "amount": 17562.44,
+             "createdDateTime" : "2011-06-21T15:29:32Z"
+           },
+          ]
